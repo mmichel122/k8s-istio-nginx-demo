@@ -38,14 +38,27 @@ spec:
         version: v1
     spec:
       containers:
-      - image: nginx
-        name: nginx
-        volumeMounts:
-        - name: index-html
-          mountPath: /usr/share/nginx/html
+      - name: nginx
+        image: nginx
         ports:
-        - containerPort: 80
+        - containerPort: 8080
+        volumeMounts:
+        - mountPath: /usr/share/nginx/html
+          name: index-html   
+        - mountPath: /etc/nginx/conf.d
+          readOnly: true
+          name: nginx-conf
+        - mountPath: /var/log/nginx
+          name: log
       volumes:
+      - name: nginx-conf
+        configMap:
+          name: nginx-conf 
+          items:
+            - key: default.conf
+              path: default.conf
       - name: index-html
         configMap:
           name: mydata-cm-v1
+      - name: log
+        emptyDir: {}
