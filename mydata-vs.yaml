@@ -10,8 +10,12 @@ spec:
       - destination:
           host: mydata
           subset: v1
-        weight: 90
+        weight: 60
       - destination:
           host: mydata
           subset: v2
         weight: 10
+      - destination:
+          host: mydata
+          subset: v3
+        weight: 30
