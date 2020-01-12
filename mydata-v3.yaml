@@ -1,3 +1,7 @@
+---
+#################################################
+# ConfigMap for index.html for mydata v1
+#################################################
 apiVersion: v1
 kind: ConfigMap
 metadata:
