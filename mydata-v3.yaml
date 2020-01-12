@@ -8,7 +8,7 @@ metadata:
   name: mydata-cm-v3
 data:
   index.html: |
-    <body bgcolor="green">
+    <body bgcolor="yellow">
       <center>
         <h1><font color="blue">NGINX DEMO WITH ISTIO</font></h1>
         <h1><font color="blue">V3</font></h1>
